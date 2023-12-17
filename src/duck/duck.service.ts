@@ -1,14 +1,19 @@
 import { Injectable } from '@nestjs/common';
 
-import { MallardDuck } from './type/MallardDuck';
+import { ModelDuck } from './type';
+
+import { FlyRocketPowered } from './Behaviour';
 
 @Injectable()
 export class DuckService {
   constructor() {
-    const duck = new MallardDuck();
+    const duck = new ModelDuck();
 
-    duck.display();
     duck.performFly();
+
+    duck.setFlyBehaviour(new FlyRocketPowered());
+
     duck.performQuack();
+    duck.performFly();
   }
 }

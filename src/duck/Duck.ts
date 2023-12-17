@@ -6,6 +6,14 @@ export abstract class Duck {
 
   public abstract display();
 
+  public setFlyBehaviour(fb: FlyBehaviour) {
+    this.flyBehaiour = fb;
+  }
+
+  public setQuackBehavior(qb: QuackBehaviour) {
+    this.quackBehaviour = qb;
+  }
+
   public performFly() {
     this.flyBehaiour.fly();
   }
